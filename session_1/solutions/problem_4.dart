@@ -23,17 +23,26 @@ int main() {
   ];
   bool check = true;
   while (check) {
+    String branch = "", year = "", course_name = "", course_code = "";
     stdout.write(
         "Enter type of user 1. Admin 2. Student ,Any other number to Exit : ");
     int? user = int.parse(stdin.readLineSync()!);
     switch (user) {
       case 1:
-        stdout.write("Enter course type 1.Open elective 2.Branch elective : ");
-        int? course = int.parse(stdin.readLineSync()!);
+        int course;
+        do {
+          stdout
+              .write("Enter course type 1.Open elective 2.Branch elective : ");
+          course = int.parse(stdin.readLineSync()!).toInt();
+          if (course < 1 || course > 2) {
+            print("Wrong input, Try Again ");
+          }
+        } while (course < 1 || course > 2);
+
         stdout.write("Enter Course name : ");
-        String? course_name = stdin.readLineSync().toString().toUpperCase();
+        course_name = stdin.readLineSync().toString().toUpperCase();
         stdout.write("Enter Course code : ");
-        String? course_code = stdin.readLineSync().toString().toUpperCase();
+        course_code = stdin.readLineSync().toString().toUpperCase();
         switch (course) {
           case 1:
             open_electives.add(OpenElective(course_code, course_name));
@@ -42,8 +51,8 @@ int main() {
             stdout.write("Enter Branch and year separated by a space : ");
             String b_y = stdin.readLineSync().toString();
             List<String> ip = b_y.split(" ");
-            String branch = ip[0].toUpperCase();
-            String year = ip[1].toUpperCase();
+            branch = ip[0].toUpperCase();
+            if (ip.length > 1) year = ip[1].toUpperCase();
             // stdout.write("Enter Year : ");
             // String? year = stdin.readLineSync();
             branch_electives
@@ -57,8 +66,8 @@ int main() {
         stdout.write("Enter Branch and year separated by a space : ");
         String b_y = stdin.readLineSync().toString();
         List<String> ip = b_y.split(" ");
-        String branch = ip[0].toUpperCase();
-        String year = ip[1].toUpperCase();
+        branch = ip[0].toUpperCase();
+        if (ip.length > 1) year = ip[1].toUpperCase();
         print("Branch Electives : ");
         for (BranchElective x in branch_electives) {
           if (x.branch == branch && x.year == year) {
