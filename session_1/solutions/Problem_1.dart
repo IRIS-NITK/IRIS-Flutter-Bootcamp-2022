@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// FUnction to print first N fibonacci numbers
 void fibo_n(int n) {
   int a = 0, b = 1;
   int c = 1;
@@ -11,6 +12,7 @@ void fibo_n(int n) {
   }
 }
 
+//driver code
 int main() {
   stdout.write("Enter the limit for FIbonacci Numbers : ");
   int? n = int.parse(stdin.readLineSync()!);
