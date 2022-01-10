@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// Function to check if a number is prime
 bool isPrime(int num) {
   if (num == 1) {
     return false;
@@ -18,6 +19,8 @@ bool isPrime(int num) {
 
 // driver code
 int main() {
+  print(
+      "Program to check if the sum of prime numbers in an array is prime or not.");
   stdout.write("Enter size of the array : ");
   int? size = int.parse(stdin.readLineSync()!);
   int sum = 0;

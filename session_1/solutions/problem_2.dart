@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// Function to check if a number is prime
 bool isPrime(int num) {
   if (num == 1) {
     return false;
@@ -16,6 +17,7 @@ bool isPrime(int num) {
   return true;
 }
 
+// Function to check if a number is semi-prime
 bool isSemiPrime(int num) {
   for (int i = 2; i * i <= num; i++) {
     if (num % i == 0) {
@@ -29,6 +31,7 @@ bool isSemiPrime(int num) {
   return false;
 }
 
+//driver  code
 int main() {
   print("Program to check whether a given number is Semi-prime or not :");
   print(
