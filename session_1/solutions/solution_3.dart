@@ -24,8 +24,8 @@ void main() {
     }
   }
   if (checkprime(sum)) {
-    print("True");
+    print("True : the sum of prime elements of the array is prime");
   } else {
-    print("False");
+    print("False : the sum of prime elements of the array is not prime");
   }
 }
