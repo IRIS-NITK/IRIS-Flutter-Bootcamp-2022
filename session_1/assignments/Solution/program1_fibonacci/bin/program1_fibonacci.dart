@@ -1,6 +1,7 @@
 import 'dart:io';
 
 void main(List<String> args) {
+  print("Enter the number of terms:");
   int n = int.parse(stdin.readLineSync()!);
   int t1 = 0;
   int t2 = 1;
