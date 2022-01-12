@@ -2,3 +2,4 @@ Python,py101
 CAD,me100
 FuelTechnology,cy203
 AppDev,cs215
+Ruby,rb101
