@@ -8,18 +8,6 @@
 
 import 'dart:io';
 
-class BranchElective {
-  var courseName = [];
-  var courseCode = [];
-  String branch = ""; //"CS", "IT" (For Example purposes only)
-  int year = 0; //1, 2, 3, 4 (For Example purposes only)
-
-  void valueGiver([String a = "", String b = ""]) {
-    courseName.add(a);
-    courseCode.add(b);
-  }
-}
-
 class OpenElective {
   var courseName = [];
   var courseCode = [];
@@ -28,6 +16,11 @@ class OpenElective {
     courseName.add(a);
     courseCode.add(b);
   }
+}
+
+class BranchElective extends OpenElective {
+  String branch = ""; //"CS", "IT" (For Example purposes only)
+  int year = 0; //1, 2, 3, 4 (For Example purposes only)
 }
 
 void yearAdmin(int year, String branch) {
