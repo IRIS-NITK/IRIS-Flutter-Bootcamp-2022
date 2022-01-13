@@ -5,7 +5,7 @@ bool checkSemiprime(int num) {
   int cnt = 0;
 
   for (int i = 2; cnt < 2 && i * i <= num; ++i)
-    while (num % i == 0) num = (num / i).toInt();
+    while (num % i == 0) num = (num ~/ i);
   ++cnt; // Increment count
   // of prime numbers
 
