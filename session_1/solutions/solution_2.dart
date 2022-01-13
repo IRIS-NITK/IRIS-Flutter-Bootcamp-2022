@@ -18,9 +18,11 @@ bool checksemiprime(int n) {
 
 void semiprime(int n) {
   if (checksemiprime(n)) {
-    print("$n is a semi prime nber");
+    print("$n is a semi prime number");
+
+
   } else {
-    print("$n is not a semi prime nber");
+    print("$n is not a semi prime number");
   }
 }
 

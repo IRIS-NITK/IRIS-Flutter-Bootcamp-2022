@@ -1,4 +1,4 @@
-import 'dart:math';
+
 
 bool checkprime(int num) {
   int factors = 0;
@@ -23,9 +23,10 @@ void main() {
       sum = sum + arr[i];
     }
   }
+  print(arr);
   if (checkprime(sum)) {
-    print("True : the sum of prime elements of the array is prime");
+    print("True : the sum of prime elements of the array is $sum prime");
   } else {
-    print("False : the sum of prime elements of the array is not prime");
+    print("False : the sum of prime elements of the array is $sum not prime");
   }
 }
