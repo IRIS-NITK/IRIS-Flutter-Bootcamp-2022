@@ -1,0 +1,69 @@
+import 'dart:io';
+int prime(int n)
+{
+    int c=0;
+    
+    for(int i=1; i<=n; i++)
+    {
+        if(n%i==0)
+            c++;
+    }
+    
+    if(c==2)
+        return 1;
+    
+    else
+        return 0;
+}
+
+int semiprime(int n)
+{
+    int c=0, p;
+    
+    if(n==1)
+        return 0;
+        
+    else if(prime(n)==1)
+        return 0;
+        
+    else
+    {
+        for(int i=2; i<n; i++)
+        {
+            if(n%i==0)
+            {    
+               p=n~/i;
+               if(prime(i)==1)
+               {
+                    if(p%i==0)
+                        c+=2;
+                    else
+                        c++;
+               }
+               
+                else
+                    c=3;
+            }
+        }
+        
+        if(c==2)
+            return 1;
+            
+        else
+            return 0;
+    }        
+}
+
+int main()
+{   
+    print("Enter the number you wish to check:");
+    int? n = int.parse(stdin.readLineSync()!);
+
+    if(semiprime(n)==1)
+        print("$n is a semiprime number.");
+        
+    else
+        print("$n is not a semiprime number.");
+        
+    return 0;
+}

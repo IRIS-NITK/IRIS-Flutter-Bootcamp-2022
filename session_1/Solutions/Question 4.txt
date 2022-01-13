@@ -1,0 +1,239 @@
+import 'dart:io';
+import 'dart:core';
+
+//For the sake of simplicity, I will keep only 2 branches, CSE and ME.
+//I've had some difficulty using and inputting lists (lists of class objects here) in dart so this code will be very messy. Apologies in advance.
+//I have also tried to make the program menu driven as intended but I'm not able to recreate goto using continue and labels.
+//The added courses should be displayed along with existing courses as I have included a check for the added course objects before printing
+//existing courses. 
+//I will try and cover more ground in OOPs using dart for further assignments.
+
+class BranchElective
+{
+  String? branch=null, courseName=null, courseCode=null;
+  int year=0;
+
+  BranchElective(this.branch, this.courseName, this.courseCode, this.year);
+
+  void printdetails()
+  {
+    print("Branch: $branch");
+    print("Course Name: $courseName");
+    print("Course Code: $courseCode");
+    print("Year: $year");
+    print(" ");
+  }
+
+  void add()
+  {
+    print("Enter the Branch");
+    branch = stdin.readLineSync();
+    this.branch = branch;
+    print("Enter the Course Code");
+    courseCode = stdin.readLineSync();
+    this.courseCode = courseCode;
+    print("Enter the Course Name");
+    courseName = stdin.readLineSync();
+    this.courseName = courseName;
+    print("Enter the year");
+    year = int.parse(stdin.readLineSync()!);
+    this.year = year;
+  }
+}
+
+class OpenElective
+{
+  String? courseName=null, courseCode=null;
+
+  OpenElective(this.courseName, this.courseCode);
+
+  void printdetails()
+  {
+    print("Open Elective:");
+    print("Course Name: $courseName");
+    print("Course Code: $courseCode");
+    print(" ");
+  }
+
+  void add()
+  {
+    print("Enter the Course Code");
+    courseCode = stdin.readLineSync();
+    this.courseCode = courseCode;
+    print("Enter the Course Name");
+    courseName = stdin.readLineSync();
+    this.courseName = courseName;
+  }
+}
+int main()
+{
+  var cs11 = BranchElective("Computer Science and Engineering","Computer Fundamentals","CS110",1);
+  var cs12 = BranchElective("Computer Science and Engineering","Object Oriented Programming","CS111",1);
+  var cs21 = BranchElective("Computer Science and Engineering","Graph Theory","CS210",2);
+  var cs22 = BranchElective("Computer Science and Engineering","Computing Systems","CS211",2);
+  var cs31 = BranchElective("Computer Science and Engineering","Soft Computing","CS310",3);
+  var cs32 = BranchElective("Computer Science and Engineering","Web Engineering","CS311",3);
+  var cs41 = BranchElective("Computer Science and Engineering","Computer Vision","CS410",4);
+  var cs42 = BranchElective("Computer Science and Engineering","Artificial Intelligence","CS411",4);
+  var cs1 = BranchElective(null, null, null, 0);
+  var cs2 = BranchElective(null, null, null, 0);
+  
+  var me11 = BranchElective("Mechanical Engineering","Theory of Elasticity","ME110",1);
+  var me12 = BranchElective("Mechanical Engineering","Mechatronic Systems","ME111",1);
+  var me21 = BranchElective("Mechanical Engineering","Welding Technology","ME210",2);
+  var me22 = BranchElective("Mechanical Engineering","Robotics","ME211",2);
+  var me31 = BranchElective("Mechanical Engineering","IC Engines","ME310",3);
+  var me32 = BranchElective("Mechanical Engineering","Vehicle Dynamics","ME311",3);
+  var me41 = BranchElective("Mechanical Engineering","Continuum Mechanics","ME410",4);
+  var me42 = BranchElective("Mechanical Engineering","Aerospace Engineering","ME411",4);
+  var me1 = BranchElective(null, null, null, 0);
+  var me2 = BranchElective(null, null, null, 0);
+
+  var csoe = OpenElective("C Programming", "CS101");
+  var smoe = OpenElective("Theory of Management", "SM101");
+
+  var oe1 = OpenElective(null, null);
+  var oe2 = OpenElective(null, null);
+
+  print("Enter type of user 1. Admin 2. Student:");
+  int? user = int.parse(stdin.readLineSync()!);
+
+  switch (user)
+  {
+    case 1:
+      print("Enter action 1. Add Branch Elective 2. Add Open Elective 3. View Courses");
+        int? aa = int.parse(stdin.readLineSync()!);
+        if(aa==1)
+        {
+          print("Chose the branch 1. CSE 2. ME");
+          int? abe = int.parse(stdin.readLineSync()!);
+            if(abe==1)
+              if(cs1.courseCode==null)
+                cs1.add();
+              else 
+                cs2.add();
+            else if(abe==2)
+              if(me1.courseCode==null)
+                me1.add();
+              else 
+                me2.add();
+        }
+        else if(aa==2)
+        {
+          if(oe1.courseCode==null)
+            oe1.add();
+          else
+            oe2.add();
+        }
+        else if(aa==3)
+        {
+          print("Enter the branch whose courses you wish to see: 1. CSE 2. ME");
+          int? abc = int.parse(stdin.readLineSync()!);
+            if(abc==1)
+            {
+              cs11.printdetails();
+              cs12.printdetails();
+              cs21.printdetails();
+              cs22.printdetails();
+              cs31.printdetails();
+              cs32.printdetails();
+              cs41.printdetails();
+              cs42.printdetails();
+              if(cs1.courseCode!=null)
+                cs1.printdetails();
+              if(cs2.courseCode!=null)
+                cs2.printdetails();
+            }
+            else if(abc==2)
+            {
+              me11.printdetails();
+              me12.printdetails();
+              me21.printdetails();
+              me22.printdetails();
+              me31.printdetails();
+              me32.printdetails();
+              me41.printdetails();
+              me42.printdetails();
+            }
+            else print("Invalid Entry");
+        }
+        else print("Invalid Entry");
+      break;
+    
+    case 2:
+      print("Enter your branch: 1. CSE 2. ME");
+       int? sbc = int.parse(stdin.readLineSync()!);
+        if(sbc==1)
+        {
+            print("Enter your year");
+             int? sycs = int.parse(stdin.readLineSync()!);
+              if(sycs==1)
+              {
+                cs11.printdetails();
+                cs12.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(sycs==2)
+              {
+                cs21.printdetails();
+                cs22.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(sycs==3)
+              {
+                cs31.printdetails();
+                cs32.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(sycs==4)
+              {
+                cs41.printdetails();
+                cs42.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+        }
+        else if(sbc==2)
+        {
+          print("Enter your year");
+             int? syme = int.parse(stdin.readLineSync()!);
+              if(syme==1)
+              {
+                me11.printdetails();
+                me12.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(syme==2)
+              {
+                me21.printdetails();
+                me22.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(syme==3)
+              {
+                me31.printdetails();
+                me32.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+              else if(syme==4)
+              {
+                me41.printdetails();
+                me42.printdetails();
+                csoe.printdetails();
+                smoe.printdetails();
+              }
+        }
+      break;
+
+    default:
+      print("Invalid User Type.");
+      break;
+  }  
+  return 0;
+}
