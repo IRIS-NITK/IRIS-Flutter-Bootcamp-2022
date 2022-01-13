@@ -31,13 +31,10 @@ void Student() {
   List<String> branch_year = [];
   print('Enter branch and year');
   String? s = stdin.readLineSync();
-  if (branch_electives != null || open_elctives != null) {
-    print(open_elctives);
-    print(branch_electives);
-  } else {
-    print('list of open electives');
-    print('list of branch electives');
-  }
+  
+    print('<list of open electives>');
+    print('<list of branch electives>');
+  
 }
 
 void main(List<String> arguments) {

@@ -8,10 +8,10 @@ import 'dart:convert';
 // ignore: non_constant_identifier_names
 int IsPrime(int n) {
   int isPrime = 1;
-  if (n == 1) {
+  if (n == 1 || n == 0) {
     isPrime = 0;
   } else {
-    for (int i = 2; i * i < n; i++) {
+    for (int i = 2; i * i <= n; i++) {
       if (n % i == 0) {
         isPrime = 0;
       }
@@ -33,9 +33,13 @@ void main(List<String> arguments) {
   print('the array is : $arr');
 
   for (int i = 0; i < arrNum; i++) {
-    sum = (sum + arr[i]).round();
+    if (IsPrime(arr[i]) == 1) {
+      sum = (sum + arr[i]).round();
+    }
   }
 
-  print('the sum is $sum ');
+  print('the sum of primes in this array is $sum ');
   IsPrime(sum) == 0 ? print('$sum is not a prime') : print('$sum is a prime');
+
+
 }

@@ -1,9 +1,12 @@
+// ignore_for_file: unused_import
+
 import 'package:solution_1/solution_1.dart' as solution_1;
 import 'dart:io';
 
 main(List<String> arguments) {
   print('Enter the number: ');
   int? n = int.parse(stdin.readLineSync()!);
+  print('The first $n Fibonacci numbers are:');
   fibonacci(n);
 }
 

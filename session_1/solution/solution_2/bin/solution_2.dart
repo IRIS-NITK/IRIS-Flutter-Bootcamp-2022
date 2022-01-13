@@ -8,9 +8,9 @@ main(List<String> arguments) {
   print('Enter the number: ');
   int? n = int.parse(stdin.readLineSync()!);
   if (checkSemiprime(n) != 0) {
-    print(true);
+    print('$n is semiprime');
   } else {
-    print(false);
+    print('$n is not semiprime');
   }
 }
 
