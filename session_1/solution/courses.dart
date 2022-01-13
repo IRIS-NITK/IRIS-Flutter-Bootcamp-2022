@@ -32,14 +32,14 @@ class BranchElective {
 
       print(
           "There are no Branch Electives for Branch : $branch  and Year : $year!!!");
-          stdout.write("\n");
+      stdout.write("\n");
       return;
     } else {
       if (BranchElectiveCourses["$year $branch"] == null) {
         stdout.write("\n");
         print(
             "There are no Branch Electives for Branch : $branch  and Year : $year!!!");
-            stdout.write("\n");
+        stdout.write("\n");
         return;
       }
 
@@ -49,7 +49,7 @@ class BranchElective {
         stdout.write("\n");
         print(
             "There are no Branch Electives for Branch : $branch  and Year : $year!!!");
-            stdout.write("\n");
+        stdout.write("\n");
         return;
       } else {
         stdout.write("\n");
@@ -93,6 +93,9 @@ class BranchElective {
     this.SetCourseCode = CCode;
 
     this.AddToList();
+
+    print(
+        "\nCourse Name : $CName with Course Code : $CCode for Branch : $branch and Year : $year has been added to the Branch Electives!!\n");
   }
 }
 
@@ -130,7 +133,6 @@ class OpenElective {
   }
 
   void AddValues() {
-    
     String CName, CCode;
 
     print("Enter course name : ");
@@ -142,6 +144,9 @@ class OpenElective {
     this.SetCourseName = CName;
     this.SetCourseCode = CCode;
     this.AddToList();
+
+    print(
+        "\nCourse Name : $CName with Course Code : $CCode  has been added to the Open Electives!!\n");
   }
 }
 
@@ -185,7 +190,11 @@ void main() {
       stdout.write('Do you want to Add or View Courses Again?(Y/N) : ');
 
       String input = stdin.readLineSync()!;
-      if (input == 'Y' || input == 'y' || input == 'Yes' || input == "yes") {
+      if (input == 'Y' ||
+          input == 'y' ||
+          input == 'Yes' ||
+          input == "yes" ||
+          input == 'YES') {
         flag = true;
       } else {
         flag = false;
