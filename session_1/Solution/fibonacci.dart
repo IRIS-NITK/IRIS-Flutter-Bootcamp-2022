@@ -17,8 +17,10 @@ void fibonacci(int n) {
 }
 
 void main() {
+  print("Enter n : ");
   var input = stdin.readLineSync(), n;
   if(input != null)
     n = int.parse(input);
+  print("First $n Fibinacci numbers are : ");
   fibonacci(n);
 }

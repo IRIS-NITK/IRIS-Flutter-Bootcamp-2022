@@ -3,6 +3,8 @@ import 'dart:io';
 bool isPrime(int n) {
   int i, m = 0;
 
+  if(n == 1)
+    return false;
   m = n ~/ 2;
   for (i = 2; i <= m; i++) {
     if (n % i == 0) {
@@ -20,16 +22,17 @@ void isSumPrime(List<int> arr, int n) {
       sum += arr[i];
   }
   if(isPrime(sum))
-    print("Sum is prime.");
+    print("Sum ($sum) is prime.");
   else
-    print("Sum is not prime.");
+    print("Sum ($sum) not prime.");
 }
 
 void main() {
+  print("Enter the size of array:");
   var input = stdin.readLineSync(), n, sum = 0;
   if (input != null) n = int.parse(input);
   var arr = <int>[];
-
+  print("Enter elements of array:");
   for (var i = 0; i < n; i++) {
     var k, number;
     do {
