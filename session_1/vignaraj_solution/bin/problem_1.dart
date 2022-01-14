@@ -5,11 +5,12 @@ void main() {
 
   // Converts the input string into an integer.
   int? n = int.parse(stdin.readLineSync()!);
-
+  print(" ");
   // For every number upto n prints the corresponding Fibonacci number.
   for (int i = 1; i < n + 1; i++) {
     print(fibonacci(i));
   }
+  print(" ");
 }
 
 // Computes the nth Fibonacci number.

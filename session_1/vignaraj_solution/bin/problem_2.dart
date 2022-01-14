@@ -20,7 +20,7 @@ void main() {
       allfact.add(i);
     }
     // If number of factors > 2 then the number cannot be a semiprime.
-    if (factors > 2) {
+    if (factors != 2) {
       print("\nNot a semiprime!\n");
       return;
     }

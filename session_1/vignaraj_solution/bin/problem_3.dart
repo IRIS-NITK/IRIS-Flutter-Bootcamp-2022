@@ -2,7 +2,7 @@ import 'dart:io' show stdin;
 import 'dart:math' show sqrt;
 
 void main() {
-  print('Please enter line of numbers to sort:');
+  print('Please enter the array of numbers:');
 
   // Taking in an array of numbers as space separated values.
   final input = stdin.readLineSync()!;
