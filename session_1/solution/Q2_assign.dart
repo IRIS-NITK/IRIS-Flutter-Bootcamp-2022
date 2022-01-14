@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:io';
 
 void main(List<String> args) {
+  print("Q2 semi prime number");
   print("input a number ");
   String? name = stdin.readLineSync();
   try {

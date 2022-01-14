@@ -1,7 +1,9 @@
 import 'dart:io';
 
 void main(List<String> args) {
-   File file = new File('/home/lohith/cap/IRIS-Flutter-Bootcamp-2022/session_1/assignments/text.txt');
+  print("Q4 ");
+   String path=("/IRIS-Flutter-Bootcamp-2022/session_1/solution/text.txt");//path to text.txt
+   File file = new File(path);
    List<String> data=file.readAsLinesSync();
   print("Enter type of user 1)ADMIN 2)Student ");
   String? input=stdin.readLineSync();
@@ -126,6 +128,7 @@ Future<void> add(
           //found all courses
 
           List<String> disp = l[j + 1].split("|");
+          print("\n");
           print("courses present in brach:${c_name} year:${year}");
           for (var k = 0; k < disp.length; k++) {
             print(disp[k]);
@@ -149,7 +152,6 @@ Future<void> add(
 Future<void> write_lines(List<String> data, File file) async {
   try {
     String wrt = data.join("\n");
-    print(wrt);
     file.writeAsStringSync(wrt);
   } catch (e) {
    print("file i/o error ");

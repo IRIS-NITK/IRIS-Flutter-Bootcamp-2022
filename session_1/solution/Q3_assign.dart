@@ -8,6 +8,7 @@ import 'dart:io';
 import 'dart:math';
 
 void main(List<String> args) {
+  print("Q3 checks the sum of array is prime or not");
   if(args.length==0){
   List<int> list= input();
   int sum=sumof(list);
