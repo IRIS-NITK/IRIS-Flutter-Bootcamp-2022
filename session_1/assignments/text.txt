@@ -1,0 +1,5 @@
+cs:1,chem-ch01|phy-ph01|math-ma01|bhm01-bhm01|PHlab-ph110,2,chem-ch02|phy-ph02|math-ma02|cs-cs02,3,cs1-cs05|math5 -ma05|coa-co02|opps-cs04
+it:1,chem-ch01|phy-ph01|math-ma01|bhm01-bhm01|PHlab-ph110,2,chem-ch02|phy-ph02|math-ma02|cs-cs02,3,cs5-cs05|math5 -ma05|Coa-co02|opps-cs04
+mech:1,chem-ch01|phy-ph01|math-ma01|bhm01-bhm01,2,chem-ch02|phy-ph02|math-ma02|cs-cs02,3,Me-me05|math -ma07|PH-PH02|MM-mm04
+chem:1,chem-ch01|phy-ph01|math-ma01|BHS-bhm01,2,chem-ch02|phy-ph02|math-ma02|cs-cs02,3,chem-ch04|math2 -Ma02|OC-ch08|IC-ch04
+opene:BHS-bhm01|Soc-soc02|math0-ma01|chem-ch01|SM-Sm10
