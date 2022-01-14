@@ -7,13 +7,18 @@ void main(List<String> args) {
   try {
     assert(name is String);
     int num = int.parse(name!);
-    is_subprime(num);
+    if(is_subprime(num)){
+      print("Number is semi prime");
+    }
+    else{
+       print("NUmber is not a semi prime");
+    }
   } catch (e) {
     print("👀 ❗❗input is not integer❗❗ 👀");
     print(e);
     exit(-1);
   }
-  print(is_subprime(18));
+
 }
 
 // returns true if nimber is a subprime //
@@ -23,7 +28,7 @@ bool is_subprime(int n) {
   for (var i = 2; i < r + 1; i++) {
     if (n % i == 0) {
       var i2 = n / i;
-      return is_prime(i) || is_prime(i2);
+      return is_prime(i) && is_prime(i2);
     }
   }
   return false;
@@ -32,7 +37,7 @@ bool is_subprime(int n) {
 // returns true if number is prime //
 bool is_prime(var num) {
   if (num == 2 || num == 3) {
-    return false;
+    return true;
   }
   if (num < 2 || num % 2 == 0) {
     return false;

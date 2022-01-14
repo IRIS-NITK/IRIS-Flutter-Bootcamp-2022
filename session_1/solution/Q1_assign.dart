@@ -1,5 +1,6 @@
 import 'dart:io';
 void main() {
+  print("Question 1 Fibunnachi series");
   print("input a number ");
   String? name = stdin.readLineSync();
   try {
