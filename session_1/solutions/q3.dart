@@ -5,10 +5,12 @@ void main (){
         ' ');
   
   for(int i=0;i<l.length;i++){ 
-   if (isprime(int.parse(l[i]))){
+   if (isprime(int.parse(l[i])) && int.parse(l[i])!=1){
      sum+=int.parse(l[i]);
    }
   }
+  print("Sum is $sum");
+  print("sum is prime:");
   print(isprime(sum));  
 }
 bool isprime(x){//to tell weather a number is prime 
