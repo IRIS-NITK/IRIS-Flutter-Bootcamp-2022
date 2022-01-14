@@ -1,19 +1,18 @@
+import 'package:dart_demo/dart_demo.dart' as dart_demo;
+import 'dart:io';
 import 'dart:convert';
 import 'dart:core';
 
-int calculate() {
-  return 6 * 7;
-}
 // Question 1 : Print the first N Fibonacci numbers(N is specified by the user).
 
 void fibonacci(int n) {
-  print("0,\n1, ");
+  stdout.write("0, 1, ");
   int n1 = 0;
   int n2 = 1;
   int n3 = 0;
   for (int i = 2; i < n; i++) {
     n3 = n1 + n2;
-    print("${n3}, ");
+    stdout.write("$n3, ");
     n1 = n2;
     n2 = n3;
   }
@@ -69,4 +68,22 @@ bool primearr(List arr) {
     print("False");
     return false;
   }
+}
+
+void main(List<String> arguments) {
+  //Question 1
+  print("How many fibonacci numbers do you want: ");
+  int? n = int.parse(stdin.readLineSync()!);
+  fibonacci(n);
+
+  //Question 2
+  print("\n\nEnter the numbers to check if its semiprime: ");
+  double? m = double.parse(stdin.readLineSync()!);
+  checkSemiprime(m);
+
+  //Question 3
+  print(
+      "\n\nFor the list [2, 3, 4, 5] \nThe sum of prime elements of the array is prime: ");
+  List<double> arr = [2, 3, 4, 5];
+  primearr(arr);
 }
