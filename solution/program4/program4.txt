@@ -1,0 +1,307 @@
+Program to view/add courses in branch & open electives!
+
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1           
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?        
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : DBMS
+Branch-Elective courseCode : CS300
+Branch-Elective branch     : CS
+Branch-Elective year       : 3
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : OS
+Branch-Elective courseCode : CS301
+Branch-Elective branch     : CS
+Branch-Elective year       : 3
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : GRAPHS
+Branch-Elective courseCode : CS302
+Branch-Elective branch     : CS
+Branch-Elective year       : 3
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : TOC
+Branch-Elective courseCode : CS200
+Branch-Elective branch     : CS
+Branch-Elective year       : 2
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : DDS
+Branch-Elective courseCode : CS201
+Branch-Elective branch     : CS
+Branch-Elective year       : 2
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : DSA
+Branch-Elective courseCode : CS202
+Branch-Elective branch     : CS
+Branch-Elective year       : 2
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 1
+
+Branch-Elective courseName : DDS MP
+Branch-Elective courseCode : EC203
+Branch-Elective branch     : EC
+Branch-Elective year       : 2
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 2
+
+Open-Elective courseName : AI & ML 
+Open-Elective courseCode : 001
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 2
+
+Open-Elective courseName : BlockChain
+Open-Elective courseCode : 002
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 2
+
+Open-Elective courseName : Crypto
+Open-Elective courseCode : 003
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 1
+
+---------------------------
+[ USER : ADMIN ]
+
+Add which elective?
+1.Branch Electives
+2.Open Electives
+Enter choice : 2
+
+Open-Elective courseName : DDS MP
+Open-Elective courseCode : 004
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 2
+
+---------------------------
+
+[ USER : STUDENT ]
+
+view which elective?
+1.branch electives
+2.open electives
+Enter choice : 2
+
+Open-Electives available :
+
+courseName : AI & ML
+courseCode : 001
+
+courseName : BlockChain
+courseCode : 002
+
+courseName : Crypto
+courseCode : 003
+
+courseName : DDS MP
+courseCode : 004
+
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 2
+
+---------------------------
+
+[ USER : STUDENT ]
+
+view which elective?
+1.branch electives
+2.open electives
+Enter choice : 1
+Year   : 3
+Branch : CS
+
+Branch-Electives available :
+
+courseName : DBMS
+courseCode : CS300
+
+courseName : OS
+courseCode : CS301
+
+courseName : GRAPHS
+courseCode : CS302
+
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 2
+
+---------------------------
+
+[ USER : STUDENT ]
+
+view which elective?
+1.branch electives
+2.open electives
+Enter choice : 1
+Year   : 2
+Branch : EC
+
+Branch-Electives available :
+
+courseName : DDS MP
+courseCode : EC203
+
+---------------------------
+Users:
+1.Admin
+2.Student
+3*.Exit
+
+Enter choice : 3
+
+Program terminated!
