@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData.from(colorScheme: ColorScheme.fromSwatch(
-      //   primarySwatch: Colors.deepOrange,
-      //   backgroundColor: Colors.white,
-      // )),
-      theme: ThemeData.dark(),
+      theme: ThemeData.from(colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: Colors.deepOrange,
+        backgroundColor: Colors.white,
+      )),
+      // theme: ThemeData.dark(),
       home: const MyHomePage(),
     );
   }
@@ -32,7 +34,42 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  final _request = true;
+  var _request = false;
+  var _text = 'Something';
+  var _valid = true;
+
+  final _number = TextEditingController();
+
+  void getInfo() async {
+
+    _valid = _number.text.isEmpty ? false : true ;
+
+
+    if(_valid){
+      var url = Uri.parse("http://numbersapi.com/${_number.text}");
+      final response = await http.get(url);
+      final body = response.body.toString();
+
+
+      setState(() {
+        _text = body;
+        _request = true;
+        
+      });
+    }
+    else{
+
+      const body = '';
+
+      setState(() {
+        _text = body;
+        _request = true;
+        
+      });
+    }
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,16 +100,18 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 30,
             ),
 
-            const TextField(
+            TextField(
+              controller: _number,
               decoration: InputDecoration(
                 labelText: "Enter a number",
-                labelStyle: TextStyle(fontSize: 25,fontStyle: FontStyle.italic,color: Colors.deepOrange),
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.deepOrange)),
-                
-                
+                labelStyle: const TextStyle(fontSize: 25,fontStyle: FontStyle.italic,color: Colors.deepOrange),
+                border: const OutlineInputBorder(),
+                focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.deepOrange)),
+                errorText: _valid ? '' : "Input cannot be empty:",
+                errorStyle: const TextStyle(fontSize: 25,fontStyle: FontStyle.italic,),
               ),
-              style: TextStyle(fontSize: 25,),
+
+              style: const TextStyle(fontSize: 25,),
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
             ),
@@ -82,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
       
             ElevatedButton(
-              onPressed: (){},
+              onPressed: getInfo,
               style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -95,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Text(
-            _request  == true ? 'Something about the number' : '',
+              _request ? _text : '',
               style: const TextStyle(fontSize: 27),
               textAlign: TextAlign.center,
             ),
