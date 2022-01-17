@@ -83,8 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Number Trivia Application"),
         backgroundColor: Colors.green[500],
       ),
-      body: SingleChildScrollView(
-        child: Center(
+      body: Center(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
