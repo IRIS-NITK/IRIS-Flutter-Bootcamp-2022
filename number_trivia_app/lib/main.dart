@@ -83,83 +83,86 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Number Trivia Application"),
         backgroundColor: Colors.green[500],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              child: numfact == ""
-                  ? const Text("No Input")
-                  : (isLoading)
-                      ? LoadingRotating.square()
-                      : Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(color: Colors.green, width: 5),
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(20.0))),
-                          margin: const EdgeInsets.all(20),
-                          padding: const EdgeInsets.all(20),
-                          child: Column(
-                            children: [
-                              Text("$_num",
-                                  style: const TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'monospace')),
-                              Padding(
-                                padding: const EdgeInsets.all(15.0),
-                                child: Text(
-                                  numfact,
-                                  maxLines: 8,
-                                  style: const TextStyle(
-                                      fontSize: 20, fontFamily: 'Georgia'),
-                                ),
-                              )
-                            ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: numfact == ""
+                    ? const Text("No Input")
+                    : (isLoading)
+                        ? LoadingRotating.square()
+                        : Container(
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: Colors.green, width: 5),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(20.0))),
+                            margin: const EdgeInsets.all(20),
+                            padding: const EdgeInsets.all(20),
+                            child: Column(
+                              children: [
+                                Text("$_num",
+                                    style: const TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'monospace')),
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Text(
+                                    numfact,
+                                    maxLines: 8,
+                                    style: const TextStyle(
+                                        fontSize: 20, fontFamily: 'Georgia'),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextField(
-                controller: _numController,
-                decoration: const InputDecoration(
-                  hintText: "Enter a Number",
-                ),
-                keyboardType: TextInputType.number,
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                    onPressed: () {
-                      getFact();
-                    },
-                    style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.all(15.0),
-                        side: const BorderSide(width: 4, color: Colors.green),
-                        backgroundColor: Colors.teal[600],
-                        shadowColor: Colors.black,
-                        primary: Colors.white),
-                    child: const Text("Get Fact")),
-                const SizedBox(
-                  width: 20,
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextField(
+                  controller: _numController,
+                  decoration: const InputDecoration(
+                    hintText: "Enter a Number",
+                  ),
+                  keyboardType: TextInputType.number,
                 ),
-                OutlinedButton(
-                    onPressed: () {
-                      getRandom();
-                    },
-                    style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.all(15.0),
-                        side: const BorderSide(width: 4, color: Colors.green),
-                        backgroundColor: Colors.teal[600],
-                        shadowColor: Colors.black,
-                        primary: Colors.white),
-                    child: const Text("Random Number")),
-              ],
-            )
-          ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                      onPressed: () {
+                        getFact();
+                      },
+                      style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.all(15.0),
+                          side: const BorderSide(width: 4, color: Colors.green),
+                          backgroundColor: Colors.teal[600],
+                          shadowColor: Colors.black,
+                          primary: Colors.white),
+                      child: const Text("Get Fact")),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  OutlinedButton(
+                      onPressed: () {
+                        getRandom();
+                      },
+                      style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.all(15.0),
+                          side: const BorderSide(width: 4, color: Colors.green),
+                          backgroundColor: Colors.teal[600],
+                          shadowColor: Colors.black,
+                          primary: Colors.white),
+                      child: const Text("Random Number")),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
