@@ -10,6 +10,7 @@ A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- ![Uploading rec.gif…](https://github.com/Omega08/IRIS-Flutter-Bootcamp-2022/tree/master/number_trivia_app/assets/rec.gif)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
