@@ -6,4 +6,3 @@
 
 ## [Timeline](/general/timeline.md)
 
-![recording](https://github.com/Omega08/IRIS-Flutter-Bootcamp-2022/tree/master/number_trivia_app/assets/rec.gif)
