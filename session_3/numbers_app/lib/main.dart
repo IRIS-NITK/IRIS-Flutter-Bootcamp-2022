@@ -94,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Image.asset("assets/icon/icon.png",),
         title: const Text("Numbers!!", style: TextStyle(fontSize: 25),),
         actions: [
           IconButton(
