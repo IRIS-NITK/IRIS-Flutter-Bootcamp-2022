@@ -8,4 +8,4 @@ This is a simple app which shows a fact about entered numer. I added few animati
 
 ## Demo
 
-<p align='center'> <img src="sample.gif"> </p>
+<p> <img src="sample.gif" width="200"> </p>
