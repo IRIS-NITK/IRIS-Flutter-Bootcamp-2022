@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:flutter/services.dart';
+import 'package:numbers_app/theme.dart';
+import 'package:provider/provider.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    child: const MyApp(),
+    create: (BuildContext context) => ThemeProvider(isDarkMode: true),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.from(colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: Colors.deepOrange,
-        backgroundColor: Colors.white,
-      )),
-      // theme: ThemeData.dark(),
-      home: const MyHomePage(),
+    return Consumer<ThemeProvider>(
+      builder: (context, themeProvider, child) {
+        return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: themeProvider.getTheme,
+        home: const MyHomePage(),
+      );
+      },
     );
   }
 }
+
 
 
 class MyHomePage extends StatefulWidget {
@@ -40,13 +49,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final _number = TextEditingController();
 
+  String dropDownValue = "/";
+
   void getInfo() async {
 
     _valid = _number.text.isEmpty ? false : true ;
 
 
+
     if(_valid){
-      var url = Uri.parse("http://numbersapi.com/${_number.text}");
+
+      var url = Uri.parse("http://numbersapi.com/${_number.text}/${dropDownValue == "/"?'':dropDownValue}");
       final response = await http.get(url);
       final body = response.body.toString();
 
@@ -58,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
       });
     }
     else{
-
-      const body = '';
+      var url = Uri.parse("http://numbersapi.com/random/${dropDownValue == "/"?'':dropDownValue}");
+      final response = await http.get(url);
+      final body = response.body.toString();
 
       setState(() {
         _text = body;
@@ -73,10 +87,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+	
+      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ));
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Number Trivia", style: TextStyle(fontSize: 25),),
-        centerTitle: true,
+        title: const Text("Numbers!!", style: TextStyle(fontSize: 25),),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.brightness_6_sharp),
+            color: Colors.white,
+            onPressed: (){
+              ThemeProvider themeProvider = Provider.of<ThemeProvider>(context,listen: false);
+              themeProvider.swapTheme();
+            },
+          ),
+        ],
         backgroundColor: Colors.deepOrange,
         ),
     body: SingleChildScrollView(
@@ -85,6 +113,36 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Text("Mode:", style: TextStyle(fontSize: 20),),
+
+                const SizedBox(width: 10,),
+
+                DropdownButton<String>(
+                  value: dropDownValue,
+                  icon: const Icon(Icons.arrow_drop_down),
+                  style: const TextStyle(fontSize: 20, color: Colors.deepOrange),
+                  onChanged: (String? newValue){
+                    setState(() {
+                      dropDownValue = newValue!;
+                      
+                    });
+                  },
+                  items: <String>["/","trivia","year","math"]
+                  .map<DropdownMenuItem<String>>(
+                    (String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value == "/" ? "all" : value),
+                      );
+                    }
+                  ).toList(),
+                ),
+              ],
+            ),
 
             const SizedBox(
               height: 70,
@@ -107,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 labelStyle: const TextStyle(fontSize: 25,fontStyle: FontStyle.italic,color: Colors.deepOrange),
                 border: const OutlineInputBorder(),
                 focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.deepOrange)),
-                errorText: _valid ? '' : "Input cannot be empty:",
+                errorText: _valid ? '' : "Showing random number",
                 errorStyle: const TextStyle(fontSize: 25,fontStyle: FontStyle.italic,),
               ),
 
@@ -135,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Text(
               _request ? _text : '',
-              style: const TextStyle(fontSize: 27),
+              style: const TextStyle(fontSize: 27,fontStyle: FontStyle.italic,fontFamily: "Oswald"),
               textAlign: TextAlign.center,
             ),
           ],
