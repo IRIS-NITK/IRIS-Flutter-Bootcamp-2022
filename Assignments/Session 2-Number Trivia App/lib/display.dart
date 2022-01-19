@@ -72,8 +72,6 @@ class _DisplayState extends State<Display> {
         backgroundColor: Colors.blueGrey[900],
       ),
       body: Center(
-        //Removing body:Center will change the reference
-        // and render the widget at the start of the page
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
