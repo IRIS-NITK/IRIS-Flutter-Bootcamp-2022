@@ -6,4 +6,4 @@ Version: 1.0.0
 
 App Demo:
 
-![Demo of App](assets/App_Demo.gif =302x200)
+<img src="/assets/App_Demo.gif" width="200" height="302"/>
