@@ -2,7 +2,7 @@
 
 NUMBER TRIVIA APP
 
-## Getting Started
+## Getting Started 🤩😍
 
 
 * [Installation Guide for Flutter](https://flutter.dev/docs/get-started/install).
@@ -12,15 +12,15 @@ NUMBER TRIVIA APP
 * Optional : Connect Laptop and your Mobile through USB cable then enable USB debugging option in your mobile.([Steps to enable USB debugging option in android](https://www.youtube.com/results?search_query=enable+debugging+mode+android))
 * Goto trivia_app/lib under this execute the file main.dart without debugging i.e Click on Run Without Debugging option in vs code.
 
-## Basic Requirements
+## Basic Requirements ✨
 
 * Add App Icon. ✅
 * Use Different Fonts. ✅
 
-## App Features
+## App Features ✨
 
 * Added App Icon.
-* Splash screen added.
+* Added Splash screen.
 * Used different fonts.
 * Added images.
 * Validation is done for user input.
@@ -28,10 +28,11 @@ NUMBER TRIVIA APP
 * Added Confirmation AlertDialog.
 * Added Copy to clipboard option.
 
-## App Demo Video
+## App Demo Video 🎥🎥
 
 * [NUMBER TRIVIA DEMO VIDEO](images/Demo_video.mp4)
 
 ## App GIF
+
 <p> <img src="images/Demo.gif" width="200">
 
