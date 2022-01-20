@@ -20,13 +20,13 @@ NUMBER TRIVIA APP
 ## App Features ✨
 
 * Added App Icon.
-* Added Splash screen.
-* Used different fonts.
-* Added images.
-* Validation is done for user input.
-* Added Multiple Floating buttons(copy,refresh and exit) to bottom right corner.
+* Added Splash Screen.
+* Used Different Fonts.
+* Added Images.
+* Validation Is Done For User Input.
+* Added Multiple Floating Buttons (copy,refresh and exit) To Bottom Right Corner.
 * Added Confirmation AlertDialog.
-* Added Copy to clipboard option.
+* Added Copy To Clipboard Option.
 
 ## App Demo Video 🎥🎥
 
