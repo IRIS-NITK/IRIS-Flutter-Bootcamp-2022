@@ -17,5 +17,5 @@ NUMBER TRIVIA APP
 * [NUMBER TRIVIA DEMO VIDEO](images/Demo_video.mp4)
 
 ## App GIF
-<p> <img src="images/Demo.gif" width="200">
+<p> <img src="images/Demo_video.mp4" width="200">
 
