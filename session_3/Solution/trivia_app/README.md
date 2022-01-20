@@ -30,7 +30,7 @@ NUMBER TRIVIA APP
 
 ## App Demo Video 🎥🎥
 
-* [NUMBER TRIVIA DEMO VIDEO](images/Demo_video.mp4)
+* [NUMBER TRIVIA APP DEMO VIDEO](images/Demo_video.mp4)
 
 ## App GIF
 
