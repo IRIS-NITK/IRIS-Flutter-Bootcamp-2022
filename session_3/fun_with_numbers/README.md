@@ -2,7 +2,7 @@
 
 A number trivia project.
 
-![alternative-text](https://github.com/Anirudh-V-Gubbi/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/fun_with_numbers/ezgif-3-8280ac1d0e.gif = 250x250)
+![alternative-text](https://github.com/Anirudh-V-Gubbi/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/fun_with_numbers/ezgif-3-8280ac1d0e.gif=250x250)
 
 ## Getting Started
 
