@@ -14,6 +14,8 @@ NUMBER TRIVIA APP
 
 ## Demo Video
 
-* [NUMBER TRIVIA DEMO VIDEO](images/Demo Video.mp4)
-* [](images/Demo.gif)
+* [NUMBER TRIVIA DEMO VIDEO](images/Demo_video.mp4)
+
+## App GIF
+<p> <img src="images/Demo_video.mp4" width="200">
 
