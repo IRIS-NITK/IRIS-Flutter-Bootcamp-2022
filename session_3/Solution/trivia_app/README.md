@@ -14,6 +14,5 @@ NUMBER TRIVIA APP
 
 ## Demo Video
 
-* [NUMBER TRIVIA DEMO VIDEO]()
-
+* [NUMBER TRIVIA DEMO VIDEO](/images/Demo.gif)
 
