@@ -24,7 +24,7 @@ NUMBER TRIVIA APP
 * Used different fonts.
 * Added images.
 * Validation is done for user input.
-* Added Multiple Floating buttons(copy,refresh and exit).
+* Added Multiple Floating buttons(copy,refresh and exit) to bottom right corner.
 * Added Confirmation AlertDialog.
 * Added Copy to clipboard option.
 
