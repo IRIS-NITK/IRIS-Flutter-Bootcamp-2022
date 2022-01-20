@@ -12,6 +12,22 @@ NUMBER TRIVIA APP
 * Optional : Connect Laptop and your Mobile through USB cable then enable USB debugging option in your mobile.([Steps to enable USB debugging option in android](https://www.youtube.com/results?search_query=enable+debugging+mode+android))
 * Goto trivia_app/lib under this execute the file main.dart without debugging i.e Click on Run Without Debugging option in vs code.
 
+## Basic Requirements
+
+* Add App Icon. ✅
+* Use Different Fonts. ✅
+
+## App Features
+
+* Added App Icon.
+* Splash screen added.
+* Used different fonts.
+* Added images.
+* Validation is done for user input.
+* Added Multiple Floating buttons(copy,refresh and exit).
+* Added Confirmation AlertDialog.
+* Added Copy to clipboard option.
+
 ## App Demo Video
 
 * [NUMBER TRIVIA DEMO VIDEO](images/Demo_video.mp4)
