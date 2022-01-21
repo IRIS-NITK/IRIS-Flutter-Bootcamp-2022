@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -43,14 +44,24 @@ class _HomePageState extends State<HomePage> {
   String v = "Trivia";
   void get() async {
     String num = n.text;
+    if (num == "") {
+      num = "random";
+    }
     String uri =
         "http://numbersapi.com/" + num + "/" + v.toLowerCase() + "?json";
-    final request = await http.get(Uri.parse(uri));
-    final data = jsonDecode(request.body);
-    f = true;
-    setState(() {
-      fact = data["text"];
-    });
+    try {
+      final request =
+          await http.get(Uri.parse(uri)).timeout(const Duration(seconds: 10));
+      final data = jsonDecode(request.body);
+      f = true;
+      setState(() {
+        fact = data["text"];
+      });
+    } on TimeoutException {
+      setState(() {
+        fact = "We are not able to fetch a fact....Looks like you are offline";
+      });
+    }
   }
 
   @override
