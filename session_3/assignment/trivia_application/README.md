@@ -10,13 +10,22 @@ The facts displayed in the app are taken from the website http://numbersapi.com
 
 ## How to use
 
-1) Choose one of the option from the 5 options shown on the screen.
+1) Choose one of the option from the 5 options shown on the screen.<br>
+<img src="/session_3/assignment/trivia_application/media/options.jpeg" alt="Options" height="200"/>
 2) Now, based on the option selected in the first step enter the input in the textfield.<br>
  a) If the option chosen is Trivia/Math/Year:  Enter a numerical value <br>
  b) If the option chosen is date: Enter a date in the format month/day<br>
  c) If the option chosen is random: Type date or year or math or trivia to get respective random fact.
-3) Press the button "Get a fact" to get the fact.
+3) Press the button "Get a fact" to get the fact.<br>
+<img src="/session_3/assignment/trivia_application/media/button.jpeg" alt="button" height="50"/>
 4) To get another fact about the same number press the buttons on the bottom of the screen.
+<img src="/session_3/assignment/trivia_application/media/otherOptions.jpeg" alt="Other options" height="50"/>
+
 
 ## Demo
 
+1) Demo of getting a **trivia** of the number **22**.<br>
+2) Demo of getting a **math** fact of the number **121**<br>
+3) Demo getting a **date** fact of the date **06/22**<br>
+4) Demo of getting a **year** fact of the year **2022**<br>
+5) Demo of using the **other buttons** at the bottom of the screen<br>
