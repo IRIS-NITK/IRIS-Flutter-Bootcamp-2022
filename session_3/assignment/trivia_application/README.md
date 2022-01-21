@@ -1,16 +1,22 @@
-# trivia_application
+# Trivia application
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This a basic app that can be used to get interesting facts about numbers, date, year. The app can also be used to get a random fact about a date, number or year. 
 
-A few resources to get you started if this is your first Flutter project:
+The facts displayed in the app are taken from the website http://numbersapi.com 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## How to use
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1) Choose one of the option from the 5 options shown on the screen.
+2) Now, based on the option selected in the first step enter the input in the textfield.<br>
+ a) If the option chosen is Trivia/Math/Year:  Enter a numerical value <br>
+ b) If the option chosen is date: Enter a date in the format month/day<br>
+ c) If the option chosen is random: Type date or year or math or trivia to get respective random fact.
+3) Press the button "Get a fact" to get the fact.
+4) To get another fact about the same number press the buttons on the bottom of the screen.
+
+## Demo
+
