@@ -16,9 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Number Trivia',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.cyan
       ),
-      home: const MyHomePage(title: 'Number Trivia'),
+      home: const MyHomePage(title: "NUMBER TRIVIA"),
+      
     );
   }
 }
@@ -32,15 +33,19 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pinkAccent[100],
+      backgroundColor:Colors.blue.shade100,
       appBar: AppBar(
-        leading: const Icon(Icons.auto_awesome_outlined),
         title: Text(
           title,
-          style: GoogleFonts.comfortaa(),
+           style: GoogleFonts.rajdhani(
+                    textStyle: Theme.of(context).textTheme.headline4,
+                    color:Colors.black87,
+                  ),    
         ),
+        centerTitle: true,
       ),
-      body: const InputWidget(),
+      body: 
+        const InputWidget(),
     );
   }
 }
@@ -58,11 +63,11 @@ class _InputWidgetState extends State<InputWidget>
     with TickerProviderStateMixin {
   late final AnimationController _ancontroller = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 3),
+    duration: const Duration(seconds: 1),
   )..forward();
   late final Animation<double> _animation = CurvedAnimation(
     parent: _ancontroller,
-    curve: Curves.fastOutSlowIn,
+    curve: Curves.easeIn,
   );
 
   @override
@@ -72,23 +77,23 @@ class _InputWidgetState extends State<InputWidget>
   }
 
   final TextEditingController _controller = TextEditingController();
-  final String _apiUrl = 'http://numbersapi.com/';
-  String _numberTrivia = '';
+  final String Url = 'http://numbersapi.com/';
+  String _Trivianumber = '';
   bool isLoading = false;
 
-  _handleSubmit(String value) {
+  CheckTrivia(String value) {
     if (value.isEmpty) {
       return;
     }
-    final Uri url = Uri.parse('$_apiUrl$value');
+    final Uri url = Uri.parse('$Url$value');
     setState(() {
       isLoading = true;
     });
     http.get(url).then((value) => setState(() {
           if (value.statusCode == 200) {
-            _numberTrivia = value.body;
+            _Trivianumber = value.body;
           } else {
-            _numberTrivia = 'Something went wrong';
+            _Trivianumber = 'Something went wrong';
           }
           isLoading = false;
           _controller.clear();
@@ -108,17 +113,18 @@ class _InputWidgetState extends State<InputWidget>
               TextField(
                   controller: _controller,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.megrim(
+                  style: GoogleFonts.patrickHand(
                     textStyle: Theme.of(context).textTheme.headline4,
                   ),
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                      hintText: 'Enter a number',
-                      hintStyle: TextStyle(color: Colors.white70),
+                      hintText: 'Enter any number',
+                      hintStyle: TextStyle(color: Colors.black),
                       border: OutlineInputBorder(
                           borderSide:
-                              BorderSide(width: 0.0, style: BorderStyle.none))),
-                  onSubmitted: _handleSubmit),
+                              BorderSide(width: 2.0, style: BorderStyle.solid))),
+              onSubmitted: CheckTrivia
+              ),
               getCardWidget(),
             ],
           ),
@@ -133,12 +139,12 @@ class _InputWidgetState extends State<InputWidget>
       return Container(
         margin: const EdgeInsets.only(top: 20.0),
         padding: const EdgeInsets.all(16.0),
-        child: const SpinKitFadingCube(
+        child: const SpinKitWave(
           color: Colors.white,
-          size: 30.0,
+          size: 40.0,
         ),
       );
-    } else if (_numberTrivia.isNotEmpty) {
+    } else if (_Trivianumber.isNotEmpty) {
       return SizeTransition(
         sizeFactor: _animation,
         axis: Axis.vertical,
@@ -147,7 +153,7 @@ class _InputWidgetState extends State<InputWidget>
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          color: Colors.pinkAccent[100],
+          color: Colors.blueGrey,
           elevation: 0.5,
           margin: const EdgeInsets.all(16.0),
           child: Container(
@@ -155,8 +161,8 @@ class _InputWidgetState extends State<InputWidget>
               borderRadius: BorderRadius.circular(10.0),
               gradient: const LinearGradient(
                 colors: [
-                  Colors.red,
-                  Colors.pink,
+                  Colors.grey,
+                  Colors.green,
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -170,8 +176,8 @@ class _InputWidgetState extends State<InputWidget>
                 children: [
                   Center(
                     child: Text(
-                      _numberTrivia,
-                      style: GoogleFonts.sacramento(
+                      _Trivianumber,
+                      style: GoogleFonts.caveat(
                         fontSize: 28.0,
                         color: Colors.white,
                       ),
