@@ -2,7 +2,7 @@
 
 This is a Number Trivia Application
 
-Version: 1.0.0
+Version: 1.2.0
 
 App Demo:
 
