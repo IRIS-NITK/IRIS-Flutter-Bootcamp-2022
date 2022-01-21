@@ -35,9 +35,16 @@ class _HomePageState extends State<HomePage> {
   final n = TextEditingController();
   String fact = "";
   bool f = false;
+  var clist = [
+    'Math',
+    'Trivia',
+    'Year',
+  ];
+  String v = "Trivia";
   void get() async {
     String num = n.text;
-    String uri = "http://numbersapi.com/" + num + "/trivia?json";
+    String uri =
+        "http://numbersapi.com/" + num + "/" + v.toLowerCase() + "?json";
     final request = await http.get(Uri.parse(uri));
     final data = jsonDecode(request.body);
     f = true;
@@ -83,6 +90,39 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                       fontSize: 40.0),
                 ),
+                const SizedBox(
+                  height: 30.0,
+                ),
+                const Text(
+                  "Pick a Category",
+                  style: TextStyle(
+                      fontFamily: "Mochiy Pop",
+                      fontSize: 30.0,
+                      color: Colors.white),
+                ),
+                const SizedBox(height: 10.0),
+                DropdownButton(
+                    value: v,
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.white,
+                    ),
+                    dropdownColor: Colors.blue[900],
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Mochiy Pop",
+                        fontSize: 30.0),
+                    items: clist.map((String list) {
+                      return DropdownMenuItem(
+                        value: list,
+                        child: Text(list),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        v = newValue!;
+                      });
+                    }),
                 const SizedBox(
                   height: 40.0,
                 ),
