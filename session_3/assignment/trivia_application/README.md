@@ -25,7 +25,14 @@ The facts displayed in the app are taken from the website http://numbersapi.com
 ## Demo
 
 1) Demo of getting a **trivia** of the number **22**.<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/trivia_22.gif" height="400" /><br>
 2) Demo of getting a **math** fact of the number **121**<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/math_121.gif" height="400" /><br>
 3) Demo getting a **date** fact of the date **06/22**<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/date_06_22.gif" height="400" /><br>
 4) Demo of getting a **year** fact of the year **2022**<br>
-5) Demo of using the **other buttons** at the bottom of the screen<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/year_2022.gif" height="400" /><br>
+5) Demo of using **random** option to find a random date fact<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/random_date.gif" height="400" /><br>
+6) Demo of using the **other buttons** at the bottom of the screen<br>
+<img src="https://github.com/Jimmy622/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignment/trivia_application/media/otherOptions.gif" height="400" /><br>
