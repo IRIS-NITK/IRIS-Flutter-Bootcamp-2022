@@ -49,6 +49,7 @@ class _MyAppState extends State<MyApp> {
                   "hi nice to see you",
                   style:TextStyle(
                     color: Colors.white, 
+                    fontFamily: "Hugme"
                   ) ,
                   ),
               )
@@ -71,17 +72,15 @@ class _MyAppState extends State<MyApp> {
  String _str="";
  Future<String> getresp(String i) async
  {
-  // print("fetching responce from url");
+ if(i!=""){
   var mod="http://numbersapi.com/"+i;
-var url = Uri.parse(mod);
-var response = await http.get(url);
-// print('Response status: ${response.statusCode}');
-// print('Response body: ${response.body}');
-String body=response.body;
-
+  var url = Uri.parse(mod);
+  var response = await http.get(url);
+  String body=response.body;
   return body;
+  }
+  return ' ';
 }
-
  
  Future<void> fetch() async {
    String str=_tc.text.toString();
@@ -114,8 +113,12 @@ String body=response.body;
              children:[
                Text(_result<0
                ?' '
-               : _str),   
-               
+               : _str,
+               style: const TextStyle(
+                 color: Colors.white,
+                 fontFamily: "mangat",
+               ),
+               ),    
              ],
            )
         )
@@ -145,13 +148,15 @@ String body=response.body;
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.white,
+                  fontFamily: 'Hugme'
                   ),
               ),
              TextField(
               controller: _tc,
                style: const TextStyle(
                  color:Colors.white, 
-                 fontSize: 20
+                 fontSize: 20,
+                 fontFamily: 'Hugme'
                  ),
                keyboardType: TextInputType.number,
                inputFormatters: [
@@ -166,6 +171,7 @@ String body=response.body;
                    style: ElevatedButton.styleFrom(
                      textStyle:const TextStyle(
                        color: Colors.white,
+                       fontFamily: "Hugme"
                      ),
                     primary: Colors.blueGrey,
                     onPrimary: Colors.blueGrey,
@@ -192,18 +198,21 @@ String body=response.body;
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+      
         appBar: AppBar(
           backgroundColor: Colors.purple,
-          title: const Text("IRIS BOOT !!"),
+          title: const Text("IRIS BOOT !! camp",
+          style: TextStyle(
+            fontFamily: "Whiskey"  
+          ),
+          ),
         ),
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-           
              buildcard(),
-             beautifycard(),
-             resultcard()
-        
+             resultcard(),
+             beautifycard()           
           ],
         )
       ),

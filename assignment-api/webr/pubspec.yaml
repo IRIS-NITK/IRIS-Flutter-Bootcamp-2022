@@ -42,15 +42,21 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
+
+  flutter_launcher_icons: ^0.9.2  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+ 
+    
   flutter_lints: ^1.0.0
-
+flutter_icons:
+    image_path: "assets/img/icon.png"
+    android: true
+    ios: true
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -61,8 +67,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true 
-  assets:
-      - assets/img/rizky.jpg
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -79,11 +84,19 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Hugme
-  #     fonts:
-  #       - assets: assets/fonts/Hug\ Me\ Tight\ -\ TTF.ttf  
-  #   - family:   
+  fonts:
+    - family: Hugme
+      fonts:
+        - asset: assets/fonts/HugMeTight-TTF.ttf
+          # style: regular
+    - family: Whiskey 
+      fonts:
+        - asset: assets/fonts/whiskeyleft.ttf
+
+    - family: mangat
+      fonts:
+        - asset: assets/fonts/mangat.ttf     
+          # style: regular
   # fonts:
   #   - family: Schyler
   #     fonts:
