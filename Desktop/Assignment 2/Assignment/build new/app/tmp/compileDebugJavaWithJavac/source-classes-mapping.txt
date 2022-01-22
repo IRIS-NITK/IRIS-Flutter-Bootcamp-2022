@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-com/example/number_trivia_project/BuildConfig.java
- com.example.number_trivia_project.BuildConfig
