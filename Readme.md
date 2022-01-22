@@ -6,4 +6,10 @@
 
 ## [Timeline](/general/timeline.md)
 
-SOLUTIONS ARE IN (/session_1/assignments)
+## SOLUTIONS ARE IN (/session_1/assignments)
+
+## APi assignment is in assignments_api/webr 
+## APi assignment CLI version in assiginment_api/cli 
+
+> https://user-images.githubusercontent.com/85625981/150624027-c21c653d-0510-4524-8d5a-6c5cea89fadc.mp4
+
