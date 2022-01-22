@@ -7,5 +7,5 @@
 ## [Timeline](/general/timeline.md)
 
 ## My_project_session 3
-### this app produces facts, trivia related to given number or date, using api "http://numbersapi.com" 
+### This app produces facts, trivia related to given number or date, using api "http://numbersapi.com" 
 ![my project](https://user-images.githubusercontent.com/76653982/150633333-9988d190-5afc-43b4-9f6b-801ad9e3afd3.gif)
