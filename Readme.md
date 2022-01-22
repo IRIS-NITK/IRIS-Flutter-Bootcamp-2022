@@ -8,8 +8,8 @@
 
 ## SOLUTIONS ARE IN (/session_1/assignments)
 
-## APi assignment is in assignments_api/webr 
-## APi assignment CLI version in assiginment_api/cli 
+## [APi assignment is in assignments_api/webr](https://github.com/Lohith-profile/IRIS-Flutter-Bootcamp-2022/tree/master/assignment-api/webr)
+## [APi assignment CLI version in assignment-api/cli](https://github.com/Lohith-profile/IRIS-Flutter-Bootcamp-2022/tree/master/assignment-api/cli_app)
 
 >https://user-images.githubusercontent.com/85625981/150627738-a87c0395-702a-42df-b52d-2ccf5fefafc7.mp4
 
