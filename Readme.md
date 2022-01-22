@@ -6,7 +6,7 @@
 
 ## [Timeline](/general/timeline.md)
 
-## SOLUTIONS ARE IN (/session_1/assignments)
+
 
 ## [APi assignment is in assignments_api/webr](https://github.com/Lohith-profile/IRIS-Flutter-Bootcamp-2022/tree/master/assignment-api/webr)
 ## [APi assignment CLI version in assignment-api/cli](https://github.com/Lohith-profile/IRIS-Flutter-Bootcamp-2022/tree/master/assignment-api/cli_app)
