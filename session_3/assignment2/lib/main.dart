@@ -311,47 +311,61 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
 
-            Container(
-              width: 400,
-              color: Colors.green[100],
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-              child: Column(
-                children: [
-                  methodType != 'random'
-                      ? OutlinedButton(
-                          onPressed: () {
-                            getfacts();
-                          },
-                          child: const Text("Get Fact"),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white),
+            Card(
+              child: Container(
+                width: 400,
+                color: Colors.green[100],
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Column(
+                  children: [
+                    methodType != 'random'
+                        ? OutlinedButton(
+                            onPressed: () {
+                              getfacts();
+                            },
+                            child: const Text("Get Fact"),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                            ),
+                          )
+                        : OutlinedButton(
+                            onPressed: () {
+                              getfacts();
+                            },
+                            child: const Text("Get Random Fact"),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                            ),
                           ),
-                        )
-                      : OutlinedButton(
-                          onPressed: () {
-                            getfacts();
-                          },
-                          child: const Text("Get Random Fact"),
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white),
+                    if (facts)
+                      Container(
+                        margin: const EdgeInsets.only(top: 15),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                        // padding: const EdgeInsets.symmetric(
+                        //     vertical: 20, horizontal: 50),
+
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Colors.white30, width: 2.0),
+                        ),
+
+                        // width: 300,
+                        child: Text(
+                          facts ? "' ${fact}' " : '',
+                          style: GoogleFonts.alef(
+                            color: Colors.greenAccent,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 15),
-                    // padding: const EdgeInsets.symmetric(
-                    //     vertical: 20, horizontal: 50),
-                    color: Colors.white,
-                    // width: 300,
-                    child: Text(
-                      facts ? fact : '',
-                      style: GoogleFonts.alef(
-                        color: Colors.black,
                       ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
