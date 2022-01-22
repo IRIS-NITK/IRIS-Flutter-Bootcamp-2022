@@ -182,7 +182,7 @@ class _factPageState extends State<factPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    fact1,
+                    fact3,
                     style: GoogleFonts.courgette(
                       textStyle: TextStyle(
                         fontSize: 20,
