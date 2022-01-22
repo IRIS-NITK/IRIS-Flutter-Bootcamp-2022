@@ -9,7 +9,7 @@ This project is a starting point for a Flutter application.
 A few resources to get you started if this is your first Flutter project:
 Screen Recording : 
 <p align="center">
-<img src="assets\20220122_131310.gif"  />
+<img src="assets\screen.gif"  />
 </align>
 
 
