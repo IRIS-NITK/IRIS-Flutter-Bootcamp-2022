@@ -4,7 +4,7 @@ A new Flutter project.
 
 # App Recording GIF!
 
-![app-recording-gif]()
+![app-recording-gif](https://github.com/aniketh-bellala/IRIS-Flutter-Bootcamp-2022/blob/master/session_3/assignments/number_trivia/app_recording.gif)
 
 ## Getting Started
 
