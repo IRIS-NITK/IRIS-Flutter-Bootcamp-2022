@@ -79,7 +79,7 @@ class _MainScreenState extends State<MainScreen> {
                     width: 10,
                   ),
                   OutlinedButton(
-                    onPressed: () {
+                    onPressed: () async{
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
