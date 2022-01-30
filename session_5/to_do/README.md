@@ -1,16 +1,11 @@
 # to_do
 
-A new Flutter project.
+A to do app
 
-## Getting Started
+## Recordings:
 
-This project is a starting point for a Flutter application.
+This project is a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- <img src="assets/vid1.gif" width="300" height="600">  <img src="assets/vid2.gif" width="300" height="600">  <img src="assets/vid3.gif" width="300" height="600">
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
