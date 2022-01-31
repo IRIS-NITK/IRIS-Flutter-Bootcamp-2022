@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:remind_me/Models/tasks.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 
 class NewTask extends StatefulWidget {
   const NewTask({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class NewTask extends StatefulWidget {
 
 class _NewTaskState extends State<NewTask> {
   var date = DateTime.now();
+  var time = DateTime.now();
   var taskName = TextEditingController();
 
   void DatePick(DateRangePickerSelectionChangedArgs args) {
@@ -22,7 +24,7 @@ class _NewTaskState extends State<NewTask> {
 
   void AddTask() async {
     var b = Hive.box<Tasks>('Tasks');
-    var t = Tasks(task: taskName.text, date: date);
+    var t = Tasks(task: taskName.text, date: date, time: time);
     var a = await b.add(t);
     Navigator.pop(context);
   }
@@ -59,15 +61,31 @@ class _NewTaskState extends State<NewTask> {
                     const SizedBox(
                       height: 30.0,
                     ),
-                    const Text("Pick a Deadline",
+                    const Text("Deadline Date",
                         style: TextStyle(
                             fontSize: 30.0, fontWeight: FontWeight.bold)),
                     const SizedBox(
                       height: 10.0,
                     ),
                     SfDateRangePicker(
+                      enablePastDates: false,
                       onSelectionChanged: DatePick,
                       initialSelectedDate: date,
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    const Text("Deadline Time",
+                        style: TextStyle(
+                            fontSize: 30.0, fontWeight: FontWeight.bold)),
+                    TimePickerSpinner(
+                      isForce2Digits: true,
+                      is24HourMode: false,
+                      onTimeChange: (t) {
+                        setState(() {
+                          time = t;
+                        });
+                      },
                     ),
                     const SizedBox(
                       height: 30.0,

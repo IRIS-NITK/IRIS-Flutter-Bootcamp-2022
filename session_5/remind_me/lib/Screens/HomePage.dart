@@ -36,43 +36,61 @@ class _HomePageState extends State<HomePage> {
           centerTitle: true,
         ),
         body: Container(
+            width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: RefreshIndicator(
-              child: ListView.builder(
-                  itemCount: tasks.length,
-                  itemBuilder: (context, p) {
-                    var name = tasks[p].task;
-                    var dl = tasks[p].date;
-                    return Card(
-                      child: ListTile(
-                        trailing: IconButton(
-                            onPressed: () async {
-                              await box.deleteAt(p);
+              child: tasks.isEmpty
+                  ? Center(
+                      child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "No Tasks Scheduled",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ))
+                  : ListView.builder(
+                      itemCount: tasks.length,
+                      itemBuilder: (context, p) {
+                        var name = tasks[p].task;
+                        var dld = tasks[p].date;
+                        var dlt = tasks[p].time;
+                        return Card(
+                          child: ListTile(
+                            trailing: IconButton(
+                                onPressed: () async {
+                                  await box.deleteAt(p);
+                                  gettasks();
+                                },
+                                icon: const Icon(Icons.done_outline_outlined)),
+                            title: Text(
+                              name,
+                              style: const TextStyle(fontSize: 20.0),
+                            ),
+                            subtitle: Text(
+                              DateFormat('dd/MM/yyyy').format(dld) +
+                                  ", " +
+                                  DateFormat('hh:mm').format(dlt),
+                              style: const TextStyle(fontSize: 15.0),
+                            ),
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => TaskPage(
+                                    index: p,
+                                  ),
+                                ),
+                              );
                               gettasks();
                             },
-                            icon: const Icon(Icons.done)),
-                        title: Text(
-                          name,
-                          style: const TextStyle(fontSize: 20.0),
-                        ),
-                        subtitle: Text(
-                          DateFormat('dd/MM/yyyy').format(dl),
-                          style: TextStyle(fontSize: 15.0),
-                        ),
-                        onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => TaskPage(
-                                index: p,
-                              ),
-                            ),
-                          );
-                          gettasks();
-                        },
-                      ),
-                    );
-                  }),
+                          ),
+                        );
+                      }),
               onRefresh: () {
                 return Future.delayed(const Duration(seconds: 1), () {
                   setState(() {
@@ -86,7 +104,7 @@ class _HomePageState extends State<HomePage> {
             await Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                return NewTask();
+                return const NewTask();
               }),
             );
             gettasks();

@@ -8,5 +8,7 @@ class Tasks {
   String task;
   @HiveField(1)
   DateTime date;
-  Tasks({required this.task, required this.date});
+  @HiveField(2)
+  DateTime time;
+  Tasks({required this.task, required this.date, required this.time});
 }

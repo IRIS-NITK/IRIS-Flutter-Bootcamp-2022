@@ -57,7 +57,10 @@ class _TaskPageState extends State<TaskPage> {
                         TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10.0),
-                  Text(DateFormat('dd/MM/yyyy').format(todo.date),
+                  Text(
+                      DateFormat('dd/MM/yyyy').format(todo.date) +
+                          ", " +
+                          DateFormat('hh:mm').format(todo.time),
                       style: const TextStyle(
                         fontSize: 35.0,
                       )),
