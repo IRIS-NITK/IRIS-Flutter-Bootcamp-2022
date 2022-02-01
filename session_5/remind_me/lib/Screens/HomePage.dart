@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             subtitle: Text(
                               DateFormat('dd/MM/yyyy').format(dld) +
                                   ", " +
-                                  DateFormat('hh:mm').format(dlt),
+                                  DateFormat('hh:mm a').format(dlt),
                               style: const TextStyle(fontSize: 15.0),
                             ),
                             onTap: () async {

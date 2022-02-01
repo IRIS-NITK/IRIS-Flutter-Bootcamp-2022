@@ -4,7 +4,7 @@ import 'package:remind_me/Models/tasks.dart';
 import 'package:intl/intl.dart';
 
 class TaskPage extends StatefulWidget {
-  TaskPage({Key? key, required this.index}) : super(key: key);
+  const TaskPage({Key? key, required this.index}) : super(key: key);
   final int index;
 
   @override
@@ -26,7 +26,7 @@ class _TaskPageState extends State<TaskPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Task Details"),
+          title: const Text("Task Details"),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -60,7 +60,7 @@ class _TaskPageState extends State<TaskPage> {
                   Text(
                       DateFormat('dd/MM/yyyy').format(todo.date) +
                           ", " +
-                          DateFormat('hh:mm').format(todo.time),
+                          DateFormat('hh:mm a').format(todo.time),
                       style: const TextStyle(
                         fontSize: 35.0,
                       )),
