@@ -25,7 +25,7 @@ NUMBER TRIVIA APP
 
 ## App Demo Video 🎥🎥
 
-* [NUMBER TRIVIA APP DEMO VIDEO](images/Demo_video.mp4)
+* [NUMBER TRIVIA APP DEMO VIDEO](images/Demo_Video.mp4)
 
 ## App GIF
 
