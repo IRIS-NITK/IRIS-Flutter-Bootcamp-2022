@@ -10,7 +10,7 @@ TO DO APPLICATION
 * Open code in  Visual Studio Code Editor.([Installation Guide for Visual Studio Code](https://code.visualstudio.com/docs))
 * [Setup flutter in VS Code](https://docs.flutter.dev/development/tools/vs-code).
 * Optional : Connect Laptop and your Mobile through USB cable then enable USB debugging option in your mobile.([Steps to enable USB debugging option in android](https://www.youtube.com/results?search_query=enable+debugging+mode+android))
-* Goto to_do_app folder and open terminal in vs code and execute ***flutter pub get*** command and then ***flutter run***.
+* Goto to_do_app folder and open terminal in vs code and execute ***flutter pub get*** and then ***flutter run*** commands.
 
 ## Basic Requirements ✨
 
