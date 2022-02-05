@@ -16,7 +16,7 @@ TO DO APPLICATION
 
 * Create,Update and Delete Task. ✅
 * Deadline Feature. ✅
-* Local Notification. ✅
+* Local Notifications. ✅
 
 ## App Features ✨
 
@@ -30,9 +30,9 @@ TO DO APPLICATION
 
 ## App Demo Video 🎥🎥
 
-* [NUMBER TRIVIA APP DEMO VIDEO](images/Demo_Video_to_do_app.mp4)
+* [TO DO APP DEMO VIDEO](to_do_app/images/Demo_Video_to_do_app.mp4)
 
 ## App GIF
 
-<p> <img src="images/Demo.gif" width="200">
+<p> <img src="to_do_app/images/Demo.gif" width="200">
 
