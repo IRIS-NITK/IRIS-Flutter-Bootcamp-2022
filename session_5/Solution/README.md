@@ -1,6 +1,6 @@
-# trivia_app
+# to_do_app
 
-NUMBER TRIVIA APP
+TO DO APPLICATION
 
 ## Getting Started 🤩😍
 
@@ -10,7 +10,13 @@ NUMBER TRIVIA APP
 * Open code in  Visual Studio Code Editor.([Installation Guide for Visual Studio Code](https://code.visualstudio.com/docs))
 * [Setup flutter in VS Code](https://docs.flutter.dev/development/tools/vs-code).
 * Optional : Connect Laptop and your Mobile through USB cable then enable USB debugging option in your mobile.([Steps to enable USB debugging option in android](https://www.youtube.com/results?search_query=enable+debugging+mode+android))
-* Goto trivia_app/lib under this execute the file main.dart without debugging i.e Click on Run Without Debugging option in vs code.
+* Goto to_do_app folder and open terminal in vs code and execute ***flutter pub get*** command and then ***flutter run***.
+
+## Basic Requirements ✨
+
+* Create,Update and Delete Task. ✅
+* Deadline Feature. ✅
+* Local Notification. ✅
 
 ## App Features ✨
 
@@ -18,10 +24,9 @@ NUMBER TRIVIA APP
 * Added Splash Screen.
 * Used Different Fonts.
 * Added Images.
-* Validation Is Done For User Input.
-* Added Multiple Floating Buttons (Copy,Refresh and Exit) To Bottom Right Corner.
-* Added Confirmation AlertDialog.
-* Added Copy To Clipboard Option.
+* Added Deadline Feature.
+* Added Local Notifications.
+* Validation Is Done.
 
 ## App Demo Video 🎥🎥
 
