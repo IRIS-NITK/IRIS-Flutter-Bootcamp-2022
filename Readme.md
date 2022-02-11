@@ -1,8 +1,7 @@
 # IRIS-Flutter-Bootcamp-2021
 
-## [Installation Guide for Flutter](https://flutter.dev/docs/get-started/install)
-
-## [Essential Git](https://github.com/IRIS-NITK/IRIS-RoR-Bootcamp-2020/blob/main/essential_git.md)
-
-## [Timeline](/general/timeline.md)
+- Assignment-1: session_1/Solution/Assignment_1
+- Assignment-2: session_3/number_trivia_app
+- Assignment-3: session_5/to_do
+- Assignment-4: session_5/movies
 
