@@ -1,6 +1,8 @@
 # task_planner
+![Assignment 3 Output](https://user-images.githubusercontent.com/97331880/153807968-9ebbb56c-def2-4934-a521-b0ed5ec33f9a.gif)
 
 A new Flutter project.
+
 
 ## Getting Started
 
