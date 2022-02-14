@@ -1,0 +1,44 @@
+import 'dart:io';
+import 'dart:convert';
+
+//I've had some issues with inputting values into lists in dart which I wasn't able to rectify.
+
+int prime(int n)
+{
+    int c=0;
+    
+    for(int i=1; i<=n; i++)
+    {
+        if(n%i==0)
+            c++;
+    }
+    
+    if(c==2)
+        return 1;
+    
+    else
+        return 0;
+}
+
+int main()
+{
+  int sum=0;
+  var a = <int>[]; 
+  print("Enter number of entries");
+    int? n = int.parse(stdin.readLineSync()!);
+    
+  for(int i=0;i<n;i++)
+  {
+      print("Enter the value of element ${i+1}");
+      a[i] = int.parse(stdin.readLineSync()!);
+      if(prime(a[i])==1)
+        sum+=a[i];
+  }
+  
+  if(prime(sum)==1)
+    print("The sum of all prime entries is prime.");
+  else
+    print("The sum of all prime entries is not prime.");
+
+   return 0; 
+}
