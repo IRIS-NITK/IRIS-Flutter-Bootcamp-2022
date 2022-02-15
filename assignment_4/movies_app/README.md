@@ -1,6 +1,8 @@
 # movies_app
 
-A new Flutter project.
+A movie app using imDb API using BloC(without freezed).
+
+//The gif of the working app will be added soon
 
 ## Getting Started
 
