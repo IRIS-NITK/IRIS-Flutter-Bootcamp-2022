@@ -2,7 +2,7 @@
 
 A movie app using imDb API using BloC(without freezed).
 
-//The gif of the working app will be added soon
+<img src="https://github.com/Anirudh-V-Gubbi/IRIS-Flutter-Bootcamp-2022/blob/master/assignment_4/movies_app/ezgif-2-5d37cca400.gif" width="30%" height="30%">
 
 ## Getting Started
 
