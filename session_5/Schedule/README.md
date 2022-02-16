@@ -1,6 +1,8 @@
 # schedule
 
-A new Flutter project.
+An app to add/delete/edit schedules.
+<img src="https://github.com/Anirudh-V-Gubbi/IRIS-Flutter-Bootcamp-2022/blob/master/session_5/Schedule/ezgif-2-5ae3ea8298.gif" width="30%" height="30%">
+
 
 ## Getting Started
 
