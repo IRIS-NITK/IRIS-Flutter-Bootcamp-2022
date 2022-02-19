@@ -1,0 +1,24 @@
+Splash Screen
+
+
+Local Storage for top 10 Movies and series
+
+                               /
+BLoC for state management    \/
+
+                                              /
+Home/Popular Movies, Series, Top 10 Page    \/
+
+                         /
+Top 250 Movies page    \/
+
+                          /
+Top 250 Series page     \/
+
+Search Movie page
+
+Search Series page
+
+Movie info Page
+
+Series info Page
