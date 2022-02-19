@@ -1,0 +1,6 @@
+OOPS,cs200,cs,2
+SigPrsc,ec209,ec,2
+MicroControllers,ec301,ec,3
+C++,cs102,cs,1
+EngMech,me101,me,1
+EngDraw,cv111,cv,1
