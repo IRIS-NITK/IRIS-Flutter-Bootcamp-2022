@@ -1,6 +1,8 @@
 # movies_app
 
-A new Flutter project.
+A imDb movies app using imDb API using BLoC component (without freezed).
+
+<img src="https://github.com/Anirudh-V-Gubbi/IRIS-Flutter-Bootcamp-2022/blob/master/assignment_4/movies_app/ezgif-2-0bbb1c7a93.gif" width="30%" height="30%">
 
 ## Getting Started
 
