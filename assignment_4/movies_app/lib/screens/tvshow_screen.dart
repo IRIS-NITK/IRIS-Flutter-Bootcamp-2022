@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:movies_app/bloc/movie_bloc.dart';
 import 'package:movies_app/movie_models/movie.dart';
 import 'package:movies_app/screens/movie_screen.dart';
@@ -17,6 +18,14 @@ class TVShowScreen extends StatefulWidget {
 class _TVShowScreenState extends State<TVShowScreen> {
 
   List<TVShow> finalTVShowList = [];
+  List<String> searchHistory = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getSearchHistory();
+  }
+
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<MovieBloc>(context).add(Top250TVs());
@@ -34,7 +43,7 @@ class _TVShowScreenState extends State<TVShowScreen> {
               onPressed: (){
                 showSearch(
                     context: context,
-                    delegate: TVsearchDelegate()
+                    delegate: TVsearchDelegate(searchHistory: searchHistory, updateBox: updateBox)
                 );
               },
               icon: const Icon(Icons.search)
@@ -142,6 +151,22 @@ class _TVShowScreenState extends State<TVShowScreen> {
             });
             return Container();
           }
+          else if(state is MoviesError)
+          {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Oops, something went wrong",
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey
+                  ),
+                )
+              ],
+            );
+          }
           else
             {
               return Container();
@@ -174,14 +199,33 @@ class _TVShowScreenState extends State<TVShowScreen> {
         break;
     }
   }
+
+  void getSearchHistory() async{
+    try{
+      var box = await Hive.openBox('showSearchList');
+
+      List<String> searchList = box.get('searched', defaultValue: []);
+      searchHistory = searchList;
+    }
+    catch(e){
+    }
+  }
+
+  void updateBox(List<String> newList) async{
+    var box = await Hive.openBox('showSearchList');
+    await box.put('searched', newList);
+
+  }
+
 }
 
 class TVsearchDelegate extends SearchDelegate{
-  List<String> searchTerms = [];
 
+  final List<String> searchHistory;
+  final Function updateBox;
 
+  TVsearchDelegate({required this.searchHistory, required this.updateBox});
 
-  // TODO: search history
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -208,6 +252,12 @@ class TVsearchDelegate extends SearchDelegate{
 
   @override
   Widget buildResults(BuildContext context) {
+
+    if(!searchHistory.contains(query) && query.isNotEmpty){
+      searchHistory.add(query);
+      this.updateBox(searchHistory);
+    }
+
     BlocProvider.of<MovieBloc>(context).add(
         SearchTVs(query)
     );
@@ -239,10 +289,31 @@ class TVsearchDelegate extends SearchDelegate{
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return const Text(" ");
+    List<String> matchQuery = [];
+
+    for(var term in searchHistory){
+      if(query.isEmpty){
+        matchQuery.add(term);
+      }
+      else if(term.toLowerCase().contains(query.toLowerCase())){
+        matchQuery.add(term);
+      }
+    }
+
+    return ListView.builder(
+        itemCount: matchQuery.length,
+        itemBuilder: (context, i){
+          return ListTile(
+            title: Text(
+                matchQuery[i],
+                style: TextStyle(color: Colors.grey)
+            ),
+            onTap: (){
+              query = matchQuery[i];
+            },
+          );
+        }
+    );
   }
-
-
-
 
 }

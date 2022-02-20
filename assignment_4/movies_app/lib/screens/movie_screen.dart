@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive/hive.dart';
 import 'package:movies_app/bloc/movie_bloc.dart';
 import 'package:movies_app/movie_models/movie.dart';
 import 'package:movies_app/screens/cast_screen.dart';
@@ -17,9 +18,18 @@ class MovieScreen extends StatefulWidget {
 class _MovieScreenState extends State<MovieScreen> {
 
   List<Movie> finalMovieList = [];
+  List<String> searchHistory = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getSearchHistory();
+  }
+
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<MovieBloc>(context).add(Top250Movies());
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -34,7 +44,7 @@ class _MovieScreenState extends State<MovieScreen> {
               onPressed: (){
                 showSearch(
                     context: context,
-                    delegate: searchDelegate()
+                    delegate: searchDelegate(searchHistory: searchHistory, updateBox: updateBox)
                 );
               },
               icon: const Icon(Icons.search)
@@ -141,6 +151,22 @@ class _MovieScreenState extends State<MovieScreen> {
             });
             return Container();
           }
+          else if(state is MoviesError)
+            {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Oops, something went wrong",
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.grey
+                    ),
+                  )
+                ],
+              );
+            }
           else
             {
               return Container();
@@ -174,12 +200,31 @@ class _MovieScreenState extends State<MovieScreen> {
     }
   }
 
+  void getSearchHistory() async{
+    try{
+      var box = await Hive.openBox('movieSearchList');
+
+      List<String> searchList = box.get('searched', defaultValue: []);
+      searchHistory = searchList;
+    }
+    catch(e){
+    }
+  }
+
+  void updateBox(List<String> newList) async{
+    var box = await Hive.openBox('movieSearchList');
+    await box.put('searched', newList);
+
+  }
+
 }
 
 class searchDelegate extends SearchDelegate{
-  List<String> searchTerms = [];
+  final List<String> searchHistory;
+  final Function updateBox;
 
-  // TODO: search history
+  searchDelegate({required this.searchHistory, required this.updateBox});
+
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -206,6 +251,10 @@ class searchDelegate extends SearchDelegate{
 
   @override
   Widget buildResults(BuildContext context) {
+    if(!searchHistory.contains(query) && query.isNotEmpty){
+      searchHistory.add(query);
+      this.updateBox(searchHistory);
+    }
      BlocProvider.of<MovieBloc>(context).add(
        SearchMovies(query)
      );
@@ -237,7 +286,31 @@ class searchDelegate extends SearchDelegate{
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return const Text(" ");
+    List<String> matchQuery = [];
+
+    for(var term in searchHistory){
+      if(query.isEmpty){
+        matchQuery.add(term);
+      }
+      else if(term.toLowerCase().contains(query.toLowerCase())){
+          matchQuery.add(term);
+      }
+    }
+
+    return ListView.builder(
+        itemCount: matchQuery.length,
+        itemBuilder: (context, i){
+          return ListTile(
+            title: Text(
+                matchQuery[i],
+                style: TextStyle(color: Colors.grey)
+            ),
+            onTap: (){
+              query = matchQuery[i];
+            },
+          );
+        }
+    );
   }
 
 }

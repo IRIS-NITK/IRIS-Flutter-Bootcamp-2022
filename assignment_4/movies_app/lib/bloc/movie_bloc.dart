@@ -30,12 +30,7 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
             );
           }
 
-          if(movies.isEmpty){
-            emit(MoviesEmpty());
-          }
-          else{
-            emit(MoviesFetched(movies: movies));
-          }
+          emit(MoviesFetched(movies: movies));
 
         }
         else if(event is Top250TVs || event is SearchTVs){
@@ -54,12 +49,7 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
 
           }
 
-          if(shows.isEmpty){
-            emit(MoviesEmpty());
-          }
-          else{
-            emit(TVShowsFetched(shows: shows));
-          }
+          emit(TVShowsFetched(shows: shows));
 
         }
         else if(event is CastofMovie){
@@ -88,7 +78,7 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
         }
       }
       catch(e){
-          //emit(MoviesError());
+          emit(MoviesError());
       }
 
     });

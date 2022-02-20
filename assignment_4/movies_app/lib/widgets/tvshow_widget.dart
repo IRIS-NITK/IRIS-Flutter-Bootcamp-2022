@@ -16,6 +16,20 @@ class _TVShowWidgetState extends State<TVShowWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+    if(widget.shows.isEmpty)
+    {
+      return Center(
+        child: Text(
+          "No shows found",
+          style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: Colors.grey
+          ),
+        ),
+      );
+    }
     return ListView.builder(
         itemCount: widget.shows.length,
         itemBuilder: (context, i){

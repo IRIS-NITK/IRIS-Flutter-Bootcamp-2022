@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/screens/launch_screen.dart';
 
 import 'bloc/movie_bloc.dart';
 
-void main() {
+void main() async{
+  await Hive.initFlutter();
   runApp(const MyApp());
 }
 

@@ -37,5 +37,3 @@ class TVShowCastFetched extends MovieState{
 }
 
 class MoviesError extends MovieState{}
-
-class MoviesEmpty extends MovieState{}

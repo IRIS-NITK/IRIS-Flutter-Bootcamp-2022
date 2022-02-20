@@ -16,6 +16,20 @@ class _MovieWidgetState extends State<MovieWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if(widget.movies.isEmpty)
+      {
+        return Center(
+          child: Text(
+            "No movies found",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: Colors.grey
+            ),
+          ),
+        );
+      }
+
     return ListView.builder(
         itemCount: widget.movies.length,
         itemBuilder: (context, i){
