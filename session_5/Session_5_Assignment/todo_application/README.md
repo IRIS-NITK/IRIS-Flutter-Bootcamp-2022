@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+## App ScreenRecord
+
+![20220221_1603023579](https://user-images.githubusercontent.com/78261857/154952561-a1a5d97f-8fcf-4a87-aa83-357bb01babb8.gif)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
