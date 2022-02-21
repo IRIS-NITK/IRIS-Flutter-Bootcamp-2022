@@ -2,7 +2,13 @@
 
 A new Flutter project.
 
+## Partially Completed App Screen Record
+
 ## Getting Started
+
+
+https://user-images.githubusercontent.com/78261857/154956992-674c08a7-07e7-4d44-b8af-94ad08b077d3.mp4
+
 
 This project is a starting point for a Flutter application.
 
