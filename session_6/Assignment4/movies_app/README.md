@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-##App Screen Record
+## App Screen Record
 
 ## Getting Started
 
